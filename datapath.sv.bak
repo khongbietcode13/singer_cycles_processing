@@ -1,0 +1,146 @@
+module datapath (
+    input  logic        clk, reset,
+    
+    // Tín hiệu điều khiển từ Controller
+    input  logic [1:0]  RegSrc,       // Chọn địa chỉ đọc RA1, RA2 cho RegFile
+    input  logic        RegWrite,     // Cho phép ghi thanh ghi (WE3)
+    input  logic [1:0]  ImmSrc,       // Chế độ mở rộng hằng số ngay
+    input  logic        ALUSrc,       // MUX chọn SrcB (0: ShiftOut, 1: ExtImm)
+    input  logic [1:0]  ALUControl,   // Chọn chức năng ALU (00:ADD, 01:SUB, 10:AND, 11:ORR)
+    input  logic        MemtoReg,     // MUX chọn dữ liệu ghi trả (0: ALUResult, 1: ReadData)
+    input  logic        PCSrc,        // MUX chọn PC tiếp theo (0: PCPlus4, 1: Result)
+    
+    // Cờ trạng thái trả về Controller
+    output logic [3:0]  ALUFlags,     // {N, Z, C, V}
+    
+    // Giao tiếp với Instruction & Data Memory
+    output logic [31:0] PC,           // Địa chỉ lệnh xuất ra Instruction Memory
+    input  logic [31:0] Instr,        // Mã lệnh 32-bit từ Instruction Memory
+    output logic [31:0] ALUResult,    // Kết quả ALU (hoặc Địa chỉ bộ nhớ RAM)
+    output logic [31:0] WriteData,    // Dữ liệu ghi ra RAM (đọc từ RD2)
+    input  logic [31:0] ReadData      // Dữ liệu đọc về từ Data Memory
+);
+
+    // Khai báo các đường dây tín hiệu nội bộ (Wires)
+    logic [31:0] PCNext, PCPlus4, PCPlus8;
+    logic [31:0] ExtImm;
+    logic [31:0] SrcA, SrcB;
+    logic [31:0] ShiftOut;
+    logic [31:0] Result;
+    logic [3:0]  RA1, RA2;
+
+    // =========================================================================
+    // 1. KHỐI CON TRỎ LỆNH PC (PROGRAM COUNTER LOGIC)
+    // =========================================================================
+    
+    // MUX chọn địa chỉ PC tiếp theo: PCPlus4 (tuần tự) hoặc Result (nhảy/rẽ nhánh)
+    mux2 #(32) pcmux (
+        .d0(PCPlus4),
+        .d1(Result),
+        .s(PCSrc),
+        .y(PCNext)
+    );
+
+    // Thanh ghi PC
+    pc #(32) pcreg (
+        .clk(clk),
+        .pc_next(PCNext),
+        .pc(PC)
+    );
+
+    // Bộ cộng PC + 4 (Lấy địa chỉ lệnh kế tiếp)
+    adder #(32) pcadd1 (
+        .a(PC),
+        .b(32'd4),
+        .y(PCPlus4)
+    );
+
+    // Bộ cộng PC + 8 (Cấp trực tiếp cho chân r15 của Register File)
+    adder #(32) pcadd2 (
+        .a(PCPlus4),
+        .b(32'd4),
+        .y(PCPlus8)
+    );
+
+    // =========================================================================
+    // 2. KHỐI TẬP THANH GHI (REGISTER FILE & REGISTER MULTIPLEXERS)
+    // =========================================================================
+
+    // MUX chọn địa chỉ đọc RA1: Instr[19:16] (Rn) hoặc 4'b1111 (R15)
+    mux2 #(4) ra1mux (
+        .d0(Instr[19:16]),
+        .d1(4'b1111),
+        .s(RegSrc[0]),
+        .y(RA1)
+    );
+
+    // MUX chọn địa chỉ đọc RA2: Instr[3:0] (Rm) hoặc Instr[15:12] (Rd/STR)
+    mux2 #(4) ra2mux (
+        .d0(Instr[3:0]),
+        .d1(Instr[15:12]),
+        .s(RegSrc[1]),
+        .y(RA2)
+    );
+
+    // Tập thanh ghi Register File 
+    regfile rf (
+        .clk(clk),
+        .we3(RegWrite),
+        .ra1(RA1),
+        .ra2(RA2),
+        .wa3(Instr[15:12]),   // Thanh ghi đích Rd nằm ở bit [15:12]
+        .wd3(Result),          // Dữ liệu ghi trả từ MUX resmux
+        .r15(PCPlus8),         // Luôn nhận giá trị PC + 8
+        .rd1(SrcA),            // Đầu vào toán hạng A trực tiếp cho ALU
+        .rd2(WriteData)        // Đầu ra dữ liệu đọc từ cổng 2 (dùng cho Shift & RAM)
+    );
+
+    // =========================================================================
+    // 3. KHỐI BỘ DỊCH (SHIFT), MỞ RỘNG (EXTEND) & ALU
+    // =========================================================================
+
+    // Module Shift: Dịch bit dữ liệu WriteData (RD2) trước khi vào MUX SrcB
+    shift shifter (
+        .a(WriteData),
+        .sh(Instr[6:5]),       // Trường kiểu dịch sh (bit 6:5)
+        .shamt(Instr[11:7]),   // Trường số bit dịch shamt5 (bit 11:7)
+        .y(ShiftOut)
+    );
+
+    // Khối mở rộng hằng số ngay (Extend)
+    extend ext (
+        .Instr(Instr[23:0]),
+        .ImmSrc(ImmSrc),
+        .ExtImm(ExtImm)
+    );
+
+    // MUX chọn nguồn thứ 2 cho ALU (SrcB): Dữ liệu đã dịch (ShiftOut) hoặc Hằng số ngay (ExtImm)
+    mux2 #(32) srcbmux (
+        .d0(ShiftOut),
+        .d1(ExtImm),
+        .s(ALUSrc),
+        .y(SrcB)
+    );
+
+    // Khối tính toán ALU
+    alu alu_inst (
+        .Srca(SrcA),
+        .Srcb(SrcB),
+        .ALUControl(ALUControl),
+        .Result(ALUResult),
+        .ALUFlags(ALUFlags)
+    );
+
+    // =========================================================================
+    // 4. KHỐI GHI TRẢ KẾT QUẢ (WRITEBACK LOGIC)
+    // =========================================================================
+
+    // MUX chọn dữ liệu ghi trả về RegFile (Result): ALUResult hoặc ReadData từ RAM
+    mux2 #(32) resmux (
+        .d0(ALUResult),
+        .d1(ReadData),
+        .s(MemtoReg),
+        .y(Result)
+    );
+
+endmodule

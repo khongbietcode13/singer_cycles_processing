@@ -1,0 +1,68 @@
+`timescale 1ns/1ps
+
+module tb_top;
+
+    // Khai báo các tín hiệu giao tiếp với DUT (module top)
+    logic        clk;
+    logic        reset;
+    logic [31:0] WriteData;
+    logic [31:0] DataAdr;
+    logic        MemWrite;
+
+    // 1. Khởi tạo thiết bị cần kiểm thử (DUT - module top)[cite: 18]
+    top dut (
+        .clk       (clk),
+        .reset     (reset),
+        .WriteData (WriteData),
+        .DataAdr   (DataAdr),
+        .MemWrite  (MemWrite)
+    );
+
+    // 2. Tạo xung clock chu kỳ 10ns (f = 100MHz)[cite: 16]
+    initial begin
+        clk = 1'b0;
+        forever #5 clk = ~clk;
+    end
+
+    // 3. Kịch bản cấp Reset ban đầu và giới hạn thời gian tránh treo mô phỏng
+    initial begin
+        $display("=== BAT DAU MO PHONG CPU ARM SINGLE-CYCLE ===");
+        reset = 1'b1;
+        #22;             // Giữ reset qua 2 cạnh lên của clock
+        reset = 1'b0;    // Nhả reset để CPU chạy từ PC = 0x00000000
+
+        // Tự động dừng nếu chạy quá 500ns mà chưa hoàn thành bài test
+        #500;
+        $display("TIMEOUT: Mo phong vuot qua thoi gian cho phep!");
+        $finish;
+    end
+
+    // 4. Giám sát giao dịch ghi RAM và tự động đối chiếu kết quả (Self-Checking)
+    always @(negedge clk) begin
+        if (MemWrite) begin
+            $display("[Time %0t ns] Ghi RAM: Dia chi = %0d (0x%h) | Du lieu = %0d (0x%h)", 
+                     $time, DataAdr, DataAdr, WriteData, WriteData);
+
+            // Lần ghi 1: Lệnh STR R6, [R0, #80] -> Ghi giá trị 10 (kết quả phép dịch LSL) vào địa chỉ 80
+            if (DataAdr === 32'd80) begin
+                assert (WriteData === 32'd10)
+                    else $error("LOI LAN GHI 1: Ky vong WriteData = 10 tai dia chi 80, nhan duoc %0d", WriteData);
+            end
+            // Lần ghi 2: Lệnh STR R8, [R0, #84] -> Ghi giá trị 5 (sau khi CMP & BEQ nhảy đúng) vào địa chỉ 84
+            else if (DataAdr === 32'd84) begin
+                assert (WriteData === 32'd5)
+                    else $error("LOI LAN GHI 2: Ky vong WriteData = 5 tai dia chi 84, nhan duoc %0d", WriteData);
+
+                $display("=== THANH CONG: CPU da thuc thi dung toan bo tap lenh! ===");
+                #20; // Chạy thêm 2 chu kỳ để quan sát rõ sóng kết thúc
+                $finish;
+            end
+            // Bắt lỗi nếu ghi vào địa chỉ bất thường khác
+            else begin
+                $error("LOI: Ghi vao dia chi khong xac dinh %0d!", DataAdr);
+                $finish;
+            end
+        end
+    end
+
+endmodule

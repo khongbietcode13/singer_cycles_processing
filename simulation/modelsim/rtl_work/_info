@@ -1,0 +1,479 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/tkvsl/bt ck/Code/single-cycle-processor/simulation/modelsim
+vadder
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1794531316
+!i10b 1
+!s100 o8_Bg@M]eZQ2I3^mQ<HQ<3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I_67lR<>Z7`6X5fb]Xe_a12
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1794159795
+8D:/tkvsl/bt ck/Code/single-cycle-processor/adder.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/adder.sv
+!i122 1
+L0 1 11
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1794531316.000000
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/adder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/adder.sv|
+!i113 1
+Z8 o-sv -work work
+Z9 !s92 -sv -work work {+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor}
+Z10 tCvgOpt 0
+valu
+R1
+R2
+!i10b 1
+!s100 22e_H_b9LSSAhOGWYlkNi3
+R3
+I_LkY9XMjB^K]=UI35zf?`3
+R4
+S1
+R0
+w1794413812
+8D:/tkvsl/bt ck/Code/single-cycle-processor/alu.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/alu.sv
+!i122 6
+L0 1 40
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/alu.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/alu.sv|
+!i113 1
+R8
+R9
+R10
+varm
+R1
+R2
+!i10b 1
+!s100 >M9k^a5i2jC4:M2bHl[:a0
+R3
+IZc4dY_lN?WbVC73eMBbeV2
+R4
+S1
+R0
+Z11 w1794496277
+8D:/tkvsl/bt ck/Code/single-cycle-processor/arm.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/arm.sv
+!i122 10
+L0 1 47
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/arm.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/arm.sv|
+!i113 1
+R8
+R9
+R10
+vcondcheck
+R1
+R2
+!i10b 1
+!s100 =SCMQJX>H8dNT8k:T9?ol3
+R3
+I8?7ad6kgNzT4hLm[PU18k3
+R4
+S1
+R0
+R11
+Z12 8D:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv
+Z13 FD:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv
+!i122 9
+L0 199 33
+R6
+r1
+!s85 0
+31
+R7
+Z14 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv|
+Z15 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv|
+!i113 1
+R8
+R9
+R10
+vcondlogic
+R1
+R2
+!i10b 1
+!s100 khhZ_WO?ieTm?eTg;jQJg0
+R3
+I?;4SNeHJhUR:M^4mC=II62
+R4
+S1
+R0
+R11
+R12
+R13
+!i122 9
+L0 153 45
+R6
+r1
+!s85 0
+31
+R7
+R14
+R15
+!i113 1
+R8
+R9
+R10
+vcontroller
+R1
+R2
+!i10b 1
+!s100 n=3KP5AcRhiBnV2Sh1UKE1
+R3
+IPbib[[PV53<A4MjMoD7n03
+R4
+S1
+R0
+R11
+R12
+R13
+!i122 9
+L0 4 53
+R6
+r1
+!s85 0
+31
+R7
+R14
+R15
+!i113 1
+R8
+R9
+R10
+vdatapath
+R1
+R2
+!i10b 1
+!s100 b4a26Q]mM>J;ljMAFBA<S1
+R3
+IjWPJZZm`dQKK1@i[1ajK80
+R4
+S1
+R0
+w1794495497
+8D:/tkvsl/bt ck/Code/single-cycle-processor/datapath.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/datapath.sv
+!i122 8
+L0 1 147
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/datapath.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/datapath.sv|
+!i113 1
+R8
+R9
+R10
+vdecoder
+R1
+R2
+!i10b 1
+!s100 _5=0c;]7Y^f4`65SM`JaO0
+R3
+IJ?@IWb>z4zY`];TVnIlL^2
+R4
+S1
+R0
+R11
+R12
+R13
+!i122 9
+L0 61 88
+R6
+r1
+!s85 0
+31
+R7
+R14
+R15
+!i113 1
+R8
+R9
+R10
+vdmem
+R1
+R2
+!i10b 1
+!s100 <h5Dz;FHmTj6KcDd41dgf0
+R3
+IUfCV>^HVBA>AhABLdTe7[3
+R4
+S1
+R0
+w1794154836
+8D:/tkvsl/bt ck/Code/single-cycle-processor/dmem.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/dmem.sv
+!i122 5
+L0 1 15
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/dmem.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/dmem.sv|
+!i113 1
+R8
+R9
+R10
+vextend
+R1
+R2
+!i10b 1
+!s100 C9_[34<:?4nGB2blglba<2
+R3
+I>>8J>fmWjMKj65[<[82gN2
+R4
+S1
+R0
+w1794150844
+8D:/tkvsl/bt ck/Code/single-cycle-processor/extend.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/extend.sv
+!i122 2
+L0 1 22
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/extend.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/extend.sv|
+!i113 1
+R8
+R9
+R10
+vflopenr
+R1
+R2
+!i10b 1
+!s100 ^:]8EYimXHG5b73BhQ2W12
+R3
+IWOz8E_h6oAbP`SPEe?8NB2
+R4
+S1
+R0
+R11
+R12
+R13
+!i122 9
+L0 234 14
+R6
+r1
+!s85 0
+31
+R7
+R14
+R15
+!i113 1
+R8
+R9
+R10
+vimem
+R1
+Z16 !s110 1794531317
+!i10b 1
+!s100 A_]1^LP56B`^OF;Pz4HNQ1
+R3
+If:V7J;fR]fF>IGH?ATK_V1
+R4
+S1
+R0
+w1794153506
+8D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv
+!i122 12
+L0 1 13
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv|
+!i113 1
+R8
+R9
+R10
+vmux2
+R1
+R2
+!i10b 1
+!s100 [T1]zPZG2]6lmC2AR4M2b2
+R3
+Ib4P_L=dzb2WkIW4OG9kWL2
+R4
+S1
+R0
+R5
+8D:/tkvsl/bt ck/Code/single-cycle-processor/mux2.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/mux2.sv
+!i122 0
+L0 1 12
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/mux2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/mux2.sv|
+!i113 1
+R8
+R9
+R10
+vpc
+R1
+R2
+!i10b 1
+!s100 KoC4:[I][T0lmGnZ<S?3z0
+R3
+IS2o9OMX@hkE?@i@:2X34>2
+R4
+S1
+R0
+w1794495372
+8D:/tkvsl/bt ck/Code/single-cycle-processor/pc.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/pc.sv
+!i122 3
+L0 1 17
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/pc.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/pc.sv|
+!i113 1
+R8
+R9
+R10
+vregfile
+R1
+R2
+!i10b 1
+!s100 W7c97hJeP<A=F=9e]JP]z3
+R3
+INlKH=i>8n2bQa0iAk_DAH2
+R4
+S1
+R0
+w1794154271
+8D:/tkvsl/bt ck/Code/single-cycle-processor/regfile.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/regfile.sv
+!i122 4
+L0 1 21
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/regfile.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/regfile.sv|
+!i113 1
+R8
+R9
+R10
+vshift
+R1
+R2
+!i10b 1
+!s100 nYZEBm4Z0^5NLngAS?;5i1
+R3
+I9`j7fTKnR3D3;Y9[i]ZNI2
+R4
+S1
+R0
+w1794413620
+8D:/tkvsl/bt ck/Code/single-cycle-processor/shift.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/shift.sv
+!i122 7
+L0 1 18
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/shift.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/shift.sv|
+!i113 1
+R8
+R9
+R10
+vtb_top
+R1
+R16
+!i10b 1
+!s100 oXh]MEJcKBz=ch;cdW0[[2
+R3
+II@dEmbLMGMn>g=]l]nWio1
+R4
+S1
+R0
+w1794498567
+8D:/tkvsl/bt ck/Code/single-cycle-processor/tb_tob.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/tb_tob.sv
+!i122 13
+L0 3 101
+R6
+r1
+!s85 0
+31
+!s108 1794531317.000000
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/tb_tob.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/tb_tob.sv|
+!i113 1
+R8
+R9
+R10
+vtop
+R1
+R2
+!i10b 1
+!s100 @MF@HNJRTBD8Q[ZX?`[PP3
+R3
+Iob7jiEPTXiAZL72>^l`Q]3
+R4
+S1
+R0
+w1794496268
+8D:/tkvsl/bt ck/Code/single-cycle-processor/top.sv
+FD:/tkvsl/bt ck/Code/single-cycle-processor/top.sv
+!i122 11
+L0 1 33
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/tkvsl/bt ck/Code/single-cycle-processor/top.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/top.sv|
+!i113 1
+R8
+R9
+R10
