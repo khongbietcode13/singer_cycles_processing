@@ -1,0 +1,29 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/mux2.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/adder.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/extend.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/pc.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/regfile.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/dmem.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/alu.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/shift.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/datapath.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/arm.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/top.sv}
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv}
+
+vlog -sv -work work +incdir+D:/tkvsl/bt\ ck/Code/single-cycle-processor {D:/tkvsl/bt ck/Code/single-cycle-processor/tb_tob.sv}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  tb_top
+
+add wave *
+view structure
+view signals
+run -all

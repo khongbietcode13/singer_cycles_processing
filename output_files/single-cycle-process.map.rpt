@@ -1,5 +1,5 @@
 Analysis & Synthesis report for single-cycle-process
-Thu Nov 12 22:39:34 2026
+Thu Nov 26 20:31:55 2026
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -59,13 +59,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 12 22:39:34 2026       ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 26 20:31:55 2026       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; single-cycle-process                        ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 5,193                                       ;
-;     Total combinational functions  ; 2,729                                       ;
+; Total logic elements               ; 5,288                                       ;
+;     Total combinational functions  ; 2,824                                       ;
 ;     Dedicated logic registers      ; 2,561                                       ;
 ; Total registers                    ; 2561                                        ;
 ; Total pins                         ; 67                                          ;
@@ -172,17 +172,18 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
-;     Processor 5            ;   0.1%      ;
-;     Processor 6            ;   0.1%      ;
-;     Processors 7-8         ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -213,16 +214,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 5,193     ;
+; Estimated Total logic elements              ; 5,288     ;
 ;                                             ;           ;
-; Total combinational functions               ; 2729      ;
+; Total combinational functions               ; 2824      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2364      ;
-;     -- 3 input functions                    ; 289       ;
-;     -- <=2 input functions                  ; 76        ;
+;     -- 4 input functions                    ; 2401      ;
+;     -- 3 input functions                    ; 324       ;
+;     -- <=2 input functions                  ; 99        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 2609      ;
+;     -- normal mode                          ; 2704      ;
 ;     -- arithmetic mode                      ; 120       ;
 ;                                             ;           ;
 ; Total registers                             ; 2561      ;
@@ -235,7 +236,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 2561      ;
-; Total fan-out                               ; 18288     ;
+; Total fan-out                               ; 18587     ;
 ; Average fan-out                             ; 3.37      ;
 +---------------------------------------------+-----------+
 
@@ -245,26 +246,26 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                         ; Entity Name ; Library Name ;
 +--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------+-------------+--------------+
-; |top                           ; 2729 (0)            ; 2561 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 67   ; 0            ; 0          ; |top                                                        ; top         ; work         ;
-;    |arm:arm_cpu|               ; 1276 (0)            ; 513 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu                                            ; arm         ; work         ;
+; |top                           ; 2824 (0)            ; 2561 (0)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 67   ; 0            ; 0          ; |top                                                        ; top         ; work         ;
+;    |arm:arm_cpu|               ; 1357 (0)            ; 513 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu                                            ; arm         ; work         ;
 ;       |controller:c|           ; 27 (0)              ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|controller:c                               ; controller  ; work         ;
 ;          |condlogic:cl|        ; 17 (4)              ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|controller:c|condlogic:cl                  ; condlogic   ; work         ;
 ;             |condcheck:cc|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|controller:c|condlogic:cl|condcheck:cc     ; condcheck   ; work         ;
 ;             |flopenr:flagreg1| ; 12 (12)             ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|controller:c|condlogic:cl|flopenr:flagreg1 ; flopenr     ; work         ;
 ;          |decoder:dec|         ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|controller:c|decoder:dec                   ; decoder     ; work         ;
-;       |datapath:dp|            ; 1249 (0)            ; 512 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp                                ; datapath    ; work         ;
+;       |datapath:dp|            ; 1330 (0)            ; 512 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp                                ; datapath    ; work         ;
 ;          |adder:pcadd1|        ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|adder:pcadd1                   ; adder       ; work         ;
 ;          |adder:pcadd2|        ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|adder:pcadd2                   ; adder       ; work         ;
-;          |alu:alu_inst|        ; 130 (130)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|alu:alu_inst                   ; alu         ; work         ;
+;          |alu:alu_inst|        ; 133 (133)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|alu:alu_inst                   ; alu         ; work         ;
 ;          |mux2:ra1mux|         ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|mux2:ra1mux                    ; mux2        ; work         ;
 ;          |mux2:ra2mux|         ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|mux2:ra2mux                    ; mux2        ; work         ;
 ;          |mux2:resmux|         ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|mux2:resmux                    ; mux2        ; work         ;
-;          |mux2:srcbmux|        ; 155 (155)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|mux2:srcbmux                   ; mux2        ; work         ;
-;          |pc:pcreg|            ; 51 (51)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|pc:pcreg                       ; pc          ; work         ;
-;          |regfile:rf|          ; 736 (736)           ; 480 (480)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|regfile:rf                     ; regfile     ; work         ;
-;          |shift:shifter|       ; 77 (77)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|shift:shifter                  ; shift       ; work         ;
+;          |mux2:srcbmux|        ; 174 (174)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|mux2:srcbmux                   ; mux2        ; work         ;
+;          |pc:pcreg|            ; 49 (49)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|pc:pcreg                       ; pc          ; work         ;
+;          |regfile:rf|          ; 738 (738)           ; 480 (480)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|regfile:rf                     ; regfile     ; work         ;
+;          |shift:shifter|       ; 136 (136)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|arm:arm_cpu|datapath:dp|shift:shifter                  ; shift       ; work         ;
 ;    |dmem:dmem_inst|            ; 1424 (1424)         ; 2048 (2048)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|dmem:dmem_inst                                         ; dmem        ; work         ;
-;    |imem:imem_inst|            ; 29 (29)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|imem:imem_inst                                         ; imem        ; work         ;
+;    |imem:imem_inst|            ; 43 (43)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|imem:imem_inst                                         ; imem        ; work         ;
 +--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -301,16 +302,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|arm:arm_cpu|datapath:dp|pc:pcreg|pc[0]           ;
-; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |top|arm:arm_cpu|datapath:dp|pc:pcreg|pc[7]           ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |top|arm:arm_cpu|datapath:dp|pc:pcreg|pc[17]          ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |top|arm:arm_cpu|datapath:dp|shift:shifter|ShiftLeft1 ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|arm:arm_cpu|datapath:dp|shift:shifter|ShiftLeft1 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |top|arm:arm_cpu|datapath:dp|alu:alu_inst|Mux30       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |top|arm:arm_cpu|datapath:dp|alu:alu_inst|Mux22       ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|arm:arm_cpu|datapath:dp|shift:shifter|ShiftLeft1 ;
+; 7:1                ; 9 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |top|arm:arm_cpu|datapath:dp|mux2:srcbmux|y[29]       ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |top|arm:arm_cpu|datapath:dp|shift:shifter|ShiftLeft1 ;
-; 7:1                ; 9 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |top|arm:arm_cpu|datapath:dp|mux2:srcbmux|y[12]       ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |top|arm:arm_cpu|datapath:dp|mux2:srcbmux|y[24]       ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; No         ; |top|arm:arm_cpu|datapath:dp|mux2:srcbmux|y[7]        ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|arm:arm_cpu|datapath:dp|mux2:srcbmux|y[11]       ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |top|arm:arm_cpu|datapath:dp|mux2:srcbmux|y[21]       ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 20 LEs               ; 5 LEs                  ; No         ; |top|arm:arm_cpu|datapath:dp|mux2:srcbmux|y[4]        ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|arm:arm_cpu|datapath:dp|mux2:srcbmux|y[10]       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 
 
@@ -454,18 +455,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cycloneiii_ff         ; 2561                        ;
 ;     ENA               ; 2530                        ;
 ;     SCLR              ; 31                          ;
-; cycloneiii_lcell_comb ; 2729                        ;
+; cycloneiii_lcell_comb ; 2824                        ;
 ;     arith             ; 120                         ;
 ;         2 data inputs ; 58                          ;
 ;         3 data inputs ; 62                          ;
-;     normal            ; 2609                        ;
+;     normal            ; 2704                        ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 16                          ;
-;         3 data inputs ; 227                         ;
-;         4 data inputs ; 2364                        ;
+;         2 data inputs ; 39                          ;
+;         3 data inputs ; 262                         ;
+;         4 data inputs ; 2401                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 25.50                       ;
-; Average LUT depth     ; 15.08                       ;
+; Max LUT depth         ; 27.10                       ;
+; Average LUT depth     ; 16.22                       ;
 +-----------------------+-----------------------------+
 
 
@@ -484,7 +485,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Nov 12 22:39:17 2026
+    Info: Processing started: Thu Nov 26 20:31:37 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off single-cycle-process -c single-cycle-process
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -497,7 +498,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file extend.
 Info (12021): Found 1 design units, including 1 entities, in source file pc.sv
     Info (12023): Found entity 1: pc File: D:/tkvsl/bt ck/Code/single-cycle-processor/pc.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file imem.sv
-    Info (12023): Found entity 1: imem File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 1
+    Info (12023): Found entity 1: imem File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
     Info (12023): Found entity 1: regfile File: D:/tkvsl/bt ck/Code/single-cycle-processor/regfile.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file dmem.sv
@@ -537,15 +538,15 @@ Info (12128): Elaborating entity "shift" for hierarchy "arm:arm_cpu|datapath:dp|
 Info (12128): Elaborating entity "extend" for hierarchy "arm:arm_cpu|datapath:dp|extend:ext" File: D:/tkvsl/bt ck/Code/single-cycle-processor/datapath.sv Line: 116
 Info (12128): Elaborating entity "alu" for hierarchy "arm:arm_cpu|datapath:dp|alu:alu_inst" File: D:/tkvsl/bt ck/Code/single-cycle-processor/datapath.sv Line: 133
 Info (12128): Elaborating entity "imem" for hierarchy "imem:imem_inst" File: D:/tkvsl/bt ck/Code/single-cycle-processor/top.sv Line: 23
-Warning (10850): Verilog HDL warning at imem.sv(9): number of words (15) in memory file does not match the number of elements in the address range [0:63] File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 9
-Warning (10030): Net "RAM.data_a" at imem.sv(7) has no driver or initial value, using a default initial value '0' File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 7
-Warning (10030): Net "RAM.waddr_a" at imem.sv(7) has no driver or initial value, using a default initial value '0' File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 7
-Warning (10030): Net "RAM.we_a" at imem.sv(7) has no driver or initial value, using a default initial value '0' File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 7
+Warning (10850): Verilog HDL warning at imem.sv(10): number of words (15) in memory file does not match the number of elements in the address range [0:63] File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 10
+Warning (10030): Net "ROM.data_a" at imem.sv(7) has no driver or initial value, using a default initial value '0' File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 7
+Warning (10030): Net "ROM.waddr_a" at imem.sv(7) has no driver or initial value, using a default initial value '0' File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 7
+Warning (10030): Net "ROM.we_a" at imem.sv(7) has no driver or initial value, using a default initial value '0' File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 7
 Info (12128): Elaborating entity "dmem" for hierarchy "dmem:dmem_inst" File: D:/tkvsl/bt ck/Code/single-cycle-processor/top.sv Line: 31
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/tkvsl/bt ck/Code/single-cycle-processor/db/single-cycle-process.ram0_imem_37c714.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (276014): Found 3 instances of uninferred RAM logic
     Info (276007): RAM logic "arm:arm_cpu|datapath:dp|regfile:rf|rf" is uninferred due to asynchronous read logic File: D:/tkvsl/bt ck/Code/single-cycle-processor/regfile.sv Line: 12
-    Info (276013): RAM logic "imem:imem_inst|RAM" is uninferred because MIF is not supported for the selected family File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 7
+    Info (276013): RAM logic "imem:imem_inst|ROM" is uninferred because MIF is not supported for the selected family File: D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv Line: 7
     Info (276007): RAM logic "dmem:dmem_inst|RAM" is uninferred due to asynchronous read logic File: D:/tkvsl/bt ck/Code/single-cycle-processor/dmem.sv Line: 8
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/tkvsl/bt ck/Code/single-cycle-processor/db/single-cycle-process.ram0_imem_37c714.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (286030): Timing-Driven Synthesis is running
@@ -553,15 +554,15 @@ Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/tkvsl/bt ck/Code/single-cycle-processor/output_files/single-cycle-process.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5324 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5419 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 65 output pins
-    Info (21061): Implemented 5257 logic cells
+    Info (21061): Implemented 5352 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4854 megabytes
-    Info: Processing ended: Thu Nov 12 22:39:34 2026
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 4841 megabytes
+    Info: Processing ended: Thu Nov 26 20:31:55 2026
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:23
 
 
 +------------------------------------------+

@@ -11,7 +11,7 @@ cModel Technology
 Z0 dD:/tkvsl/bt ck/Code/single-cycle-processor/simulation/modelsim
 vadder
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1794531316
+Z2 !s110 1795704044
 !i10b 1
 !s100 o8_Bg@M]eZQ2I3^mQ<HQ<3
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,7 +28,7 @@ Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1794531316.000000
+Z7 !s108 1795704044.000000
 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/adder.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/adder.sv|
 !i113 1
@@ -37,7 +37,7 @@ Z9 !s92 -sv -work work {+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor}
 Z10 tCvgOpt 0
 valu
 R1
-R2
+Z11 !s110 1795704045
 !i10b 1
 !s100 22e_H_b9LSSAhOGWYlkNi3
 R3
@@ -54,7 +54,7 @@ R6
 r1
 !s85 0
 31
-R7
+Z12 !s108 1795704045.000000
 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/alu.sv|
 !i113 1
@@ -63,7 +63,7 @@ R9
 R10
 varm
 R1
-R2
+Z13 !s110 1795704046
 !i10b 1
 !s100 >M9k^a5i2jC4:M2bHl[:a0
 R3
@@ -71,7 +71,7 @@ IZc4dY_lN?WbVC73eMBbeV2
 R4
 S1
 R0
-Z11 w1794496277
+Z14 w1794496277
 8D:/tkvsl/bt ck/Code/single-cycle-processor/arm.sv
 FD:/tkvsl/bt ck/Code/single-cycle-processor/arm.sv
 !i122 10
@@ -80,7 +80,7 @@ R6
 r1
 !s85 0
 31
-R7
+Z15 !s108 1795704046.000000
 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/arm.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/arm.sv|
 !i113 1
@@ -89,7 +89,7 @@ R9
 R10
 vcondcheck
 R1
-R2
+R13
 !i10b 1
 !s100 =SCMQJX>H8dNT8k:T9?ol3
 R3
@@ -97,25 +97,25 @@ I8?7ad6kgNzT4hLm[PU18k3
 R4
 S1
 R0
-R11
-Z12 8D:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv
-Z13 FD:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv
+R14
+Z16 8D:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv
+Z17 FD:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv
 !i122 9
 L0 199 33
 R6
 r1
 !s85 0
 31
-R7
-Z14 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv|
-Z15 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv|
+R12
+Z18 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv|
+Z19 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/controller.sv|
 !i113 1
 R8
 R9
 R10
 vcondlogic
 R1
-R2
+R13
 !i10b 1
 !s100 khhZ_WO?ieTm?eTg;jQJg0
 R3
@@ -123,25 +123,25 @@ I?;4SNeHJhUR:M^4mC=II62
 R4
 S1
 R0
-R11
-R12
-R13
+R14
+R16
+R17
 !i122 9
 L0 153 45
 R6
 r1
 !s85 0
 31
-R7
-R14
-R15
+R12
+R18
+R19
 !i113 1
 R8
 R9
 R10
 vcontroller
 R1
-R2
+R13
 !i10b 1
 !s100 n=3KP5AcRhiBnV2Sh1UKE1
 R3
@@ -149,25 +149,25 @@ IPbib[[PV53<A4MjMoD7n03
 R4
 S1
 R0
-R11
-R12
-R13
+R14
+R16
+R17
 !i122 9
 L0 4 53
 R6
 r1
 !s85 0
 31
-R7
-R14
-R15
+R12
+R18
+R19
 !i113 1
 R8
 R9
 R10
 vdatapath
 R1
-R2
+R11
 !i10b 1
 !s100 b4a26Q]mM>J;ljMAFBA<S1
 R3
@@ -184,7 +184,7 @@ R6
 r1
 !s85 0
 31
-R7
+R12
 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/datapath.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/datapath.sv|
 !i113 1
@@ -193,7 +193,7 @@ R9
 R10
 vdecoder
 R1
-R2
+R13
 !i10b 1
 !s100 _5=0c;]7Y^f4`65SM`JaO0
 R3
@@ -201,25 +201,25 @@ IJ?@IWb>z4zY`];TVnIlL^2
 R4
 S1
 R0
-R11
-R12
-R13
+R14
+R16
+R17
 !i122 9
 L0 61 88
 R6
 r1
 !s85 0
 31
-R7
-R14
-R15
+R12
+R18
+R19
 !i113 1
 R8
 R9
 R10
 vdmem
 R1
-R2
+R11
 !i10b 1
 !s100 <h5Dz;FHmTj6KcDd41dgf0
 R3
@@ -236,7 +236,7 @@ R6
 r1
 !s85 0
 31
-R7
+R12
 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/dmem.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/dmem.sv|
 !i113 1
@@ -245,7 +245,7 @@ R9
 R10
 vextend
 R1
-R2
+R11
 !i10b 1
 !s100 C9_[34<:?4nGB2blglba<2
 R3
@@ -271,7 +271,7 @@ R9
 R10
 vflopenr
 R1
-R2
+R13
 !i10b 1
 !s100 ^:]8EYimXHG5b73BhQ2W12
 R3
@@ -279,42 +279,42 @@ IWOz8E_h6oAbP`SPEe?8NB2
 R4
 S1
 R0
-R11
-R12
-R13
+R14
+R16
+R17
 !i122 9
 L0 234 14
 R6
 r1
 !s85 0
 31
-R7
-R14
-R15
+R12
+R18
+R19
 !i113 1
 R8
 R9
 R10
 vimem
 R1
-Z16 !s110 1794531317
+R13
 !i10b 1
-!s100 A_]1^LP56B`^OF;Pz4HNQ1
+!s100 Dk>ODoGlFQDH@b>jKDYPf2
 R3
-If:V7J;fR]fF>IGH?ATK_V1
+I@LYSklBdV?2YNz79Lj]Ph0
 R4
 S1
 R0
-w1794153506
+w1795699895
 8D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv
 FD:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv
 !i122 12
-L0 1 13
+L0 2 13
 R6
 r1
 !s85 0
 31
-R7
+R15
 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/imem.sv|
 !i113 1
@@ -349,7 +349,7 @@ R9
 R10
 vpc
 R1
-R2
+R11
 !i10b 1
 !s100 KoC4:[I][T0lmGnZ<S?3z0
 R3
@@ -366,7 +366,7 @@ R6
 r1
 !s85 0
 31
-R7
+R12
 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/pc.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/pc.sv|
 !i113 1
@@ -375,7 +375,7 @@ R9
 R10
 vregfile
 R1
-R2
+R11
 !i10b 1
 !s100 W7c97hJeP<A=F=9e]JP]z3
 R3
@@ -392,7 +392,7 @@ R6
 r1
 !s85 0
 31
-R7
+R12
 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/regfile.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/regfile.sv|
 !i113 1
@@ -401,7 +401,7 @@ R9
 R10
 vshift
 R1
-R2
+R11
 !i10b 1
 !s100 nYZEBm4Z0^5NLngAS?;5i1
 R3
@@ -418,7 +418,7 @@ R6
 r1
 !s85 0
 31
-R7
+R12
 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/shift.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/shift.sv|
 !i113 1
@@ -427,7 +427,7 @@ R9
 R10
 vtb_top
 R1
-R16
+R13
 !i10b 1
 !s100 oXh]MEJcKBz=ch;cdW0[[2
 R3
@@ -444,7 +444,7 @@ R6
 r1
 !s85 0
 31
-!s108 1794531317.000000
+R15
 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/tb_tob.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/tb_tob.sv|
 !i113 1
@@ -453,7 +453,7 @@ R9
 R10
 vtop
 R1
-R2
+R13
 !i10b 1
 !s100 @MF@HNJRTBD8Q[ZX?`[PP3
 R3
@@ -470,7 +470,7 @@ R6
 r1
 !s85 0
 31
-R7
+R15
 !s107 D:/tkvsl/bt ck/Code/single-cycle-processor/top.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+D:/tkvsl/bt ck/Code/single-cycle-processor|D:/tkvsl/bt ck/Code/single-cycle-processor/top.sv|
 !i113 1
